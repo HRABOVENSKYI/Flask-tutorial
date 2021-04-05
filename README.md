@@ -1,4 +1,4 @@
 # Flask-tutorial
 * Wev-page for application using HTML, CSS
-* Local database SQLite
+* Database MySQL (using PyMySQL)
 * POST, PUT, DELETE methods

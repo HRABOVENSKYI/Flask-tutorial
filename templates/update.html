@@ -1,17 +1,31 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+    <title>Hand Loom Shop Manager</title>
 {% endblock %}
 
 {% block body %}
-<div class="content">
-    <h1 style="text-align: center">Update Task</h1>
+    <div class="content">
+        <h1 style="text-align: center">Update hand loom</h1>
 
 
-    <form action="/update/{{ task.id }}" method="POST">
-        <input type="text" name="content" id="content" value="{{ task.content }}">
-        <input type="submit" value="Update task">
-    </form>
-</div>
+        <form action="/update/{{ loom.id }}" method="POST">
+            <h5 style="text-align: center">Origin Country</h5>
+            <input type="text" name="origin_country" id="content">
+            <h5 style="text-align: center">Price</h5>
+            <input type="text" name="price" id="content">
+            <h5 style="text-align: center">Power in watts</h5>
+            <input type="text" name="power_in_watts" id="content">
+            <h5 style="text-align: center">Width of the formed tissue</h5>
+            <input type="text" name="width_of_the_formed_tissue" id="content">
+            <h5 style="text-align: center">Material of the produced fabrice</h5>
+            <input type="text" name="material_of_the_produced_fabric" id="content">
+            <h5 style="text-align: center">Manufacture century</h5>
+            <input type="text" name="manufacture_century" id="content">
+            <h5 style="text-align: center">Status</h5>
+            <input type="text" name="status" id="content">
+            <br><br>
+            <input type="submit" value="Update loom">
+        </form>
+    </div>
 {% endblock %}

@@ -4,8 +4,25 @@ body, html {
 }
 
 .content {
-    margin: 0 auto;
-    width: 400px;
+    display: block;
+    margin: auto;
+}
+
+.element {
+    max-width: 80%;
+    justify-content: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+h1 {
+    display: block;
+}
+
+h3 {
+    display: block;
 }
 
 table, td, th {
@@ -13,23 +30,37 @@ table, td, th {
 }
 
 table {
+    top: 200px;
+    display: flex;
+    justify-content: center;
     border-collapse: collapse;
     width: 100%;
 }
 
 th {
-    height: 30px;
+    height: 40px;
 }
 
 td {
     text-align: center;
-    padding: 5px;
+    padding: 10px;
 }
 
-.form {
-    margin-top: 20px;
+form {
+    margin-top: 200px;
+}
+
+form_update {
+    margin-top: 50px;
+}
+
+input {
+    display: block;
+    margin: auto;
+    max-width: 40%;
 }
 
 #content {
     width: 70%;
 }
+

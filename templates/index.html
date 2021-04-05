@@ -1,39 +1,68 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Task Master</title>
+    <title>Hand Loom Shop Manager</title>
 {% endblock %}
 
 {% block body %}
-<div class="content">
-    <h1 style="text-align: center">Task Master</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
-    {% else %}
+    <div class="content">
+        <h1 style="text-align: center">Hand Loom</h1><br><br><br>
+        <h3 style="text-align: center"><i>Shop Manager</i></h3>
+        {% if looms|length < 1 %}
+            <h4 style="text-align: center">There are no looms. Create one below!</h4>
+        {% else %}
 
-    <table>
-        <tr>
-            <th>Task</th>
-            <th>Added</th>
-            <th>Actions</th>
-        </tr>
-        <tr>
-        {% for task in tasks %}
-            <td>{{ task.content }}</td>
-            <td>{{ task.date_created.date() }}</td>
-            <td>
-                <a href="/delete/{{ task.id }}">Delete</a>
-                <br>
-                <a href="/update/{{ task.id }}">Update</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
+            <table class="element">
+                <tr>
+                    <th>Origin country</th>
+                    <th>Price</th>
+                    <th>Power in watts</th>
+                    <th>Width of the formed tissue</th>
+                    <th>Material of the produced fabric</th>
+                    <th>Manufacture century</th>
+                    <th>Status</th>
+                    <th>Added</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    {% for loom in looms %}
+                        <td>{{ loom.origin_country }}</td>
+                        <td>{{ loom.price }}</td>
+                        <td>{{ loom.power_in_watts }}</td>
+                        <td>{{ loom.width_of_the_formed_tissue }}</td>
+                        <td>{{ loom.material_of_the_produced_fabric }}</td>
+                        <td>{{ loom.manufacture_century }}</td>
+                        <td>{{ loom.status }}</td>
+                        <td>{{ loom.date_created.date() }}</td>
+                        <td>
+                            <a href="/delete/{{ loom.id }}">Delete</a>
+                            <br>
+                            <a href="/update/{{ loom.id }}">Update</a>
+                        </td>
+                        </tr>
+                    {% endfor %}
+            </table>
+        {% endif %}
 
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add task">
-    </form>
-</div>
+        <form action="/" method="POST"В>
+            <br><br><br>
+            <i><h3 style="text-align: center">Add hand loom</h3></i>
+            <h5 style="text-align: center">Origin Country</h5>
+            <input type="text" name="origin_country" id="content">
+            <h5 style="text-align: center">Price</h5>
+            <input type="text" name="price" id="content">
+            <h5 style="text-align: center">Power in watts</h5>
+            <input type="text" name="power_in_watts" id="content">
+            <h5 style="text-align: center">Width of the formed tissue</h5>
+            <input type="text" name="width_of_the_formed_tissue" id="content">
+            <h5 style="text-align: center">Material of the produced fabric</h5>
+            <input type="text" name="material_of_the_produced_fabric" id="content">
+            <h5 style="text-align: center">Manufacture century</h5>
+            <input type="text" name="manufacture_century" id="content">
+            <h5 style="text-align: center">Status</h5>
+            <input type="text" name="status" id="content">
+            <br><br>
+            <input style="text-align: center" type="submit" value="Add to sale">
+        </form>
+    </div>
 {% endblock %}
